@@ -23,13 +23,20 @@ class YandexPlusInfoView(context: Context, attributesSet: AttributeSet) :
     }
 
     fun setupInfoModel(model: YandexPlusUserInfoModel, timeStart: Long) {
-        with(binding){
+        with(binding) {
             progress.hide()
             tvBonusCount.append(" ${model.bonusCount}")
-            //Can setupData
             tvTimer.base = timeStart
             tvTimer.start()
-            showViews(tvBonusCount, tvIsSaleAvailable, tvTimer)
+            showViews(tvBonusCount, tvIsSaleAvailable, tvTimer, btnAction)
+            btnAction.isEnabled = true
+        }
+    }
+
+    //TODO This need changed
+    fun setOnActionButtonClick(action: () -> Unit) {
+        binding.btnAction.setOnClickListener {
+            action.invoke()
         }
     }
 }

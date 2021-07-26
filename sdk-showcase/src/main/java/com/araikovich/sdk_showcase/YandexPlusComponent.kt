@@ -1,6 +1,7 @@
 package com.araikovich.sdk_showcase
 
 import android.os.SystemClock
+import com.araikovich.sdk_showcase.di.DaggerModuleComponent
 import com.araikovich.sdk_showcase.di.ModuleComponent
 
 object YandexPlusComponent {
